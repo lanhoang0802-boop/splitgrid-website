@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — SplitGrid: Multi App Workspace</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --surface: #131b2e;
+            --border: #1e293b;
+            --primary: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            max-width: 860px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 { color: #ffffff; margin-top: 32px; margin-bottom: 12px; }
+        h1 { font-size: 36px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+        h2 { font-size: 22px; color: var(--primary); }
+        p, li { color: var(--text-muted); margin-bottom: 14px; font-size: 16px; }
+        ul { padding-left: 24px; }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-nav { margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <div class="back-nav"><a href="index.html">← Back to SplitGrid Home</a></div>
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> November 11, 2026<br>
+    <strong>Application:</strong> SplitGrid: Multi App Workspace (Đa Cửa Sổ)<br>
+    <strong>Developer:</strong> Pham Hoang Lan (Leon Pham) &lt;lanhoang0802@gmail.com&gt;</p>
+
+    <div class="card">
+        <h2>🔒 Executive Summary: 100% On-Device Privacy</h2>
+        <p>SplitGrid is built on a strict privacy-by-design architecture. The application operates entirely locally on your Android device. <strong>We do NOT collect, transmit, store, sell, or share any personal user data, application activity, or screen content.</strong></p>
+    </div>
+
+    <h2>1. Information We Do NOT Collect</h2>
+    <ul>
+        <li><strong>No Personal Identifiable Information (PII):</strong> We do not require registration, usernames, passwords, phone numbers, or credit card information.</li>
+        <li><strong>No Content Inspection:</strong> We do not capture, record, read, or process the contents of any applications you run inside SplitGrid windows.</li>
+        <li><strong>No Analytics or Tracking:</strong> SplitGrid contains no third-party telemetry SDKs, trackers, or behavioral profiling tools.</li>
+    </ul>
+
+    <h2>2. Device Permissions & Why They Are Needed</h2>
+    <p>SplitGrid utilizes standard, documented Android OS APIs strictly to facilitate multi-window window positioning:</p>
+    <ul>
+        <li><strong>System Alert Window (Display over other apps):</strong> Required solely to show the floating Quick Dock assistant button on top of your screen so you can re-tile active apps with a single tap.</li>
+        <li><strong>Foreground Service (Special Use):</strong> Required to keep the floating Quick Dock active and responsive while you switch between running applications.</li>
+        <li><strong>Notifications (POST_NOTIFICATIONS):</strong> On Android 13+, this permission enables the system status bar notification for controlling or dismissing the floating dock.</li>
+        <li><strong>Launcher Intent Queries (&lt;queries&gt;):</strong> Compliant with Android 11–16 scoped storage and package visibility rules, this intent filter is used strictly to display the list of installed apps inside the App Picker dialog so you can choose which apps to launch in your grid.</li>
+    </ul>
+
+    <h2>3. Data Storage & Security</h2>
+    <p>All user presets and layout configurations (such as saved app combinations) are stored exclusively in your device's private local storage (SharedPreferences / SQLite). If you uninstall the app or clear its data, all configurations are permanently erased.</p>
+
+    <h2>4. Children’s Privacy</h2>
+    <p>SplitGrid does not address anyone under the age of 13 and collects zero information from all users regardless of age.</p>
+
+    <h2>5. Contact Us</h2>
+    <p>If you have any questions or feedback regarding this Privacy Policy, please contact:</p>
+    <p><strong>Pham Hoang Lan (Leon Pham)</strong><br>
+    Email: <a href="mailto:lanhoang0802@gmail.com">lanhoang0802@gmail.com</a><br>
+    Website: <a href="https://lanhoang0802-boop.github.io/">https://lanhoang0802-boop.github.io/</a></p>
+</body>
+</html>
