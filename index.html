@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitGrid — Multi App Workspace | Đa Cửa Sổ</title>
+    <meta name="description" content="SplitGrid transforms your Android phone, foldable, or tablet into a true multi-window workstation. Run multiple apps side-by-side with floating quick dock and 1-tap workspaces.">
+    <link rel="icon" href="https://lanhoang0802-boop.github.io/favicon.ico">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --surface: #131b2e;
+            --surface-hover: #1c2742;
+            --border: #1e293b;
+            --primary: #38bdf8;
+            --primary-accent: #0ea5e9;
+            --success: #34d399;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--primary); }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .hero {
+            max-width: 900px;
+            margin: 60px auto 40px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--primary);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        h1 span {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 36px;
+        }
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--primary-accent);
+            color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+        }
+        .btn-primary:hover { background: #0284c7; transform: translateY(-2px); }
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: var(--surface-hover); }
+        .grid {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        footer {
+            max-width: 1100px;
+            margin: 80px auto 40px;
+            padding: 24px 20px 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        footer a { color: var(--primary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">⚡ Split<span>Grid</span></a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="badge">TARGET API 36 • MATERIAL 3 PRODUCTION GRADE</div>
+        <h1>True Multi-App Multitasking <span>Beyond Just Split Screen</span></h1>
+        <p>Run 2, 3, or more apps concurrently on one screen. Featuring smart auto-tiling, floating quick dock assistant, and 1-tap workflow presets.</p>
+        <div class="cta-btns">
+            <a href="https://play.google.com/apps/testing/placeholder.example" class="btn btn-primary">🚀 Join Internal Testing</a>
+            <a href="privacy_policy.html" class="btn btn-secondary">🔒 Privacy Policy</a>
+        </div>
+    </header>
+
+    <section id="features" class="grid">
+        <div class="card">
+            <div class="card-icon">📐</div>
+            <h3>Multi-App Smart Grid</h3>
+            <p>Run multiple apps side-by-side simultaneously. Choose flexible 2, 3, 4, 6 or 8 window layouts tailored for foldables, tablets, and smartphones.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Floating Quick Dock</h3>
+            <p>A lightweight assistant always accessible on top. Re-tile windows, switch apps, or launch quick utilities without leaving your active workspace.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">💾</div>
+            <h3>1-Tap Preset Workspaces</h3>
+            <p>Pre-packaged workflows: Study & Notes, Work Desk, and Travel & Audio. Launch your entire multi-app environment in one single tap.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔋</div>
+            <h3>Battery & Performance Optimized</h3>
+            <p>Hardware-accelerated layout engine with zero background polling. Designed for high frame rates and long battery life.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>100% Private & On-Device</h3>
+            <p>Zero data collection, zero network tracking, and zero dangerous permissions. All your workspace data stays strictly on your physical device.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Foldable & Tablet Ready</h3>
+            <p>Dynamic posture recognition automatically refits your window grid when unfolding Samsung Galaxy Z Fold, tablets, or rotating between portrait & landscape.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div>© 2026 SplitGrid by Pham Hoang Lan (Leon Pham). All rights reserved.</div>
+        <div>
+            <a href="privacy_policy.html">Privacy Policy</a> • 
+            <a href="terms_of_service.html">Terms of Service</a> • 
+            <a href="mailto:lanhoang0802@gmail.com">Contact Support</a>
+        </div>
+    </footer>
+</body>
+</html>
